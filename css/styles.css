@@ -1,0 +1,419 @@
+:root{
+    --blanco: #FDFFFC;
+    --rosa: #F8C0C8;
+    --fa-counter-background-color: var(--rosa);
+    --paddingMobile: 36px 24px;
+    --paddingTablet: 36px 40px;
+    --gapSocialMobile: 24px;
+    --gapSocialTablet: 40px;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: "Noto Serif", serif;
+
+    line-height: 1.2;
+    font-weight: 400;
+
+    background-color: var(--blanco);
+}
+
+.layout{
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+/* Banner */
+
+.layout__banner{
+    width: 100%;
+    height: 69vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner__imgContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.banner__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner__textContainer{
+    position: absolute;
+    width: fit-content;
+    right: 24px;
+    bottom: 36px;
+    text-align: right;
+    color: var(--blanco);
+}
+
+.banner__name{
+    font-weight: 200;
+    font-size: 3.6rem;
+
+    /* animation-name: showRight;
+    animation-duration: 1s; */
+}
+
+@keyframes showRight {
+    0%{
+        transform: translateX(220px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.banner__description--entrenadora{
+    width: 35ch;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: typing 5s;
+}
+
+@keyframes typing {
+    0%{
+        width: 1ch;
+    }
+    100%{
+        width: 35ch;
+    }
+}
+
+/* .banner__description--creadora{
+    animation: showRight 1s;
+} */
+
+.banner__description{
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+/* Redes Sociales */
+
+.layout__socialMedia{
+    width: 100%;
+    height: fit-content;
+    padding: var(--paddingMobile);
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMedia__socialList,
+.contact__socialList,
+.footer__socialList{
+    display: flex;
+    flex-direction: row;
+    gap: var(--gapSocialMobile);
+}
+
+.socialList__icon{
+    color: var(--rosa);
+    font-size: 4.8rem;
+}
+
+.socialMedia__followers{
+    font-size: 2.4rem;
+}
+
+.socialMedia__frase{
+    text-align: center;
+    max-width: 456px;
+    font-size: 1.6rem;
+}
+
+.socialMedia__picContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 24px;
+}
+
+.picContainer__pic{
+    flex: 1;
+    min-width: 108px;
+    max-width: 161.75px;
+}
+
+.picContainer__pic--1{
+    order: 1;
+}
+
+.picContainer__pic--3{
+    order: 2;
+}
+
+.picContainer__pic--2{
+    order: 3;
+}
+
+.picContainer__pic--4{
+    order: 4;
+}
+
+/* COLABORACIONES SLIDER */
+
+.layout__colaboraciones {
+    /* background-color: green; */
+    padding: 0 24px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    overflow: hidden; /* Importante para ocultar las imágenes fuera del viewport */
+}
+
+.colaboraciones__title {
+    text-align: center;
+}
+
+/* Contenedor del slider */
+.colaboraciones__slider {
+    /* background-color: aqua; */
+    width: 200px; /* Ancho fijo para mobile */
+    height: 130px; /* Alto fijo para mobile */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Track que contiene las imágenes */
+.slider__track {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: -35px;
+    /* No definimos width aquí, lo calculamos en JS */
+}
+
+/* SECCION ABOUT */
+.layout__about{
+    background-color: var(--rosa);
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.about__left{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+    padding: var(--paddingMobile);
+
+    height: fit-content;
+}
+
+.about__right{
+    flex: 1 0 0;
+    align-self: stretch;
+    background: url(/img/val5.jpeg);
+    background-size: cover;
+    background-position: 0 34%; 
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.about__title{
+    font-size: 2.4rem;
+    color: var(--blanco);
+}
+
+.about__description{
+    color: var(--blanco);
+    max-width: 522px;
+    font-weight: 400;
+}
+
+.about__btn{
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 0 9px 19px 0px rgba(0, 0, 0, 0.15);
+    color: var(--blanco);
+    border: 1px solid var(--blanco);
+    padding: 6px 48px;
+    max-width: 370px;
+    border-radius: 18px;
+}
+
+/* SECCION YOUTUBE */
+
+.layout__youtube{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: var(--paddingMobile);
+}
+
+.youtube__title{
+    font-size: 2.4rem;
+}
+
+.youtube__description{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.youtube__video{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Frase */
+.layout__frase{
+    background-color: var(--rosa);
+    padding: var(--paddingMobile);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.frase__frase{
+    color: var(--blanco);
+    font-size: 2.4rem;
+    font-weight: bold;
+    width: fit-content;
+    text-align: center;
+}
+
+/* Contacto */
+.layout__contact{
+    padding: var(--paddingMobile);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.contact__email{
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 0 9px 19px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid black;
+    padding: 6px 0;
+    max-width: 370px;
+    border-radius: 18px;
+    width: 240px;
+}
+
+/* Footer */
+
+.layout__footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--rosa);
+    padding: var(--paddingMobile);
+}
+
+.footer__title{
+    color: var(--blanco);
+}
+
+.socialList__iconFooter{
+    color: var(--blanco);
+    font-size: 2.4rem;
+}
+
+/* MEDIAQUERIES */
+@media (min-width: 768px) {
+    .banner__textContainer{
+        right: 40px;
+    }
+
+    .layout__socialMedia,
+    .layout__colaboraciones,
+    .about__left,
+    .layout__youtube{
+        padding: var(--paddingTablet);
+    }
+
+    .about__description{
+        padding: 0;
+    }
+
+    .about__left{
+        padding-right: 0;
+    }
+
+    .about__right{
+        display: block;
+    }
+
+    .layout__colaboraciones{
+        padding-top: 0;
+    }
+
+    .picContainer__pic{
+        min-width: none;
+        max-width: none;
+    }
+
+    .socialMedia__socialList,
+    .contact__socialList,
+    .footer__socialList{
+        gap: var(--gapSocialTablet);
+    }
+
+    .socialMedia__followers,
+    .colaboraciones__title,
+    .about__title,
+    .youtube__title,
+    .frase__frase,
+    .contact__title{
+        font-size: 32px;
+    }
+
+    .banner__description,
+    .socialMedia__frase,
+    .about__description,
+    .about__btn,
+    .youtube__description,
+    .contact__email{
+        font-size: 20px;
+    }
+
+    .socialMedia__frase{
+        max-width: 496px;
+    }
+
+    .youtube__video{
+        max-width: 719px;
+    }
+
+    .contact__email{
+        width: 288px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .layout__banner{
+        height: 100vh;
+    }
+
+    .youtube__video{
+        max-width: 893px;
+    }
+}

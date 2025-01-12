@@ -1,0 +1,59 @@
+*{
+    margin:0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    /* hace que el desplazamiento entre dos links internos sea animado */
+    scroll-behavior: smooth; 
+    text-rendering: optimizeSpeed;
+    /* interlineado de tipografia: */
+    line-height: 1.5;
+}
+
+ul, ul::marker{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+li, li::marker{
+    text-decoration: none;
+}
+ 
+
+a{
+    display: block;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+p a{
+    display: inline;
+}
+
+img, video, iframe, picture, figure{
+    max-width: 100%;
+    display: block;
+}
+
+form, input, select, textarea, button, label{
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
