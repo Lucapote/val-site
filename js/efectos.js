@@ -38,8 +38,7 @@ function getVisibleSlides() {
 
 // Función para calcular el ancho total del track
 function calculateTrackWidth() {
-    const totalSlides = slides.len
-    gth + 1; // +1 por el clon
+    const totalSlides = slides.length + 1; // +1 por el clon
     return (slideWidth * totalSlides) + (slideGap * (totalSlides - 1));
 }
 
