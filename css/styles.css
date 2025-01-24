@@ -139,26 +139,23 @@ body{
     gap: 24px;
 }
 
+.picContainer__row1,
+.picContainer__row2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 24px;
+
+    flex: 1;
+
+    min-width: 240px;
+}
+
 .picContainer__pic{
     flex: 1;
     min-width: 108px;
     max-width: 161.75px;
-}
-
-.picContainer__pic--1{
-    order: 1;
-}
-
-.picContainer__pic--3{
-    order: 2;
-}
-
-.picContainer__pic--2{
-    order: 3;
-}
-
-.picContainer__pic--4{
-    order: 4;
 }
 
 /* COLABORACIONES SLIDER */
