@@ -14,6 +14,49 @@
 </head>
 <body>
     <div class="layout">
+
+        <nav class="layout__nav">
+            <span class="nav__name">Val Ortiz</span>
+        
+            <ul class="nav__menu">
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">Sobre Mi</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#colabs" class="nav__link">Colaboraciones</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#rutina" class="nav__link">Rutina de piernas</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+
+        <aside class="layout__asideNav">
+            <ul class="asideNav__menu">
+                <li class="asideNav__item">
+                    <a href="#about" class="asideNav__link">Sobre Mi</a>
+                </li>
+                <li class="asideNav__item">
+                    <a href="#colabs" class="asideNav__link">Colaboraciones</a>
+                </li>
+                <li class="asideNav__item">
+                    <a href="#rutina" class="asideNav__link">Rutina de Piernas</a>
+                </li>
+                <li class="asideNav__item">
+                    <a href="#contact" class="asideNav__link">Contacto</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="nav__crossContainer">
+            <div class="nav__crossLinea nav__crossLinea--1"></div>
+            <div class="nav__crossLinea nav__crossLinea--2"></div>
+            <div class="nav__crossLinea nav__crossLinea--3"></div>
+        </div>
+
         <section class="layout__banner">
             <div class="banner__textContainer">
                 <h1 class="banner__name">Valery Ortiz</h1>
@@ -22,7 +65,7 @@
             </div>
         </section>
 
-        <section class="layout__socialMedia">
+        <section class="layout__socialMedia" data-effect="contador">
             <ul class="socialMedia__socialList">
                 <li class="socialList__item">
                     <a href="https://www.instagram.com/valeryyortizz/" class="sociaList__link" target="_blank">
@@ -71,7 +114,7 @@
             </div>
         </section>
 
-        <section class="layout__colaboraciones">
+        <section id="colabs" class="layout__colaboraciones">
             <h2 class="colaboraciones__title">Marcas con las que colaboré</h2>
 
             <div class="colaboraciones__slider">
@@ -87,7 +130,7 @@
             </div>
         </section>
 
-        <section class="layout__about">
+        <section id="about" class="layout__about" data-effect="sliceBottom">
 
             <div class="about__container">
                 <div class="about__left">
@@ -113,7 +156,7 @@
             </div>
         </section>
 
-        <section class="layout__youtube">
+        <section id="rutina" class="layout__youtube" data-effect="sliceBottom">
             <h3 class="youtube__title">Canal de Youtube</h3>
             <h4 class="youtube__description">Rutina de Piernas para principiantes</h4>
 
@@ -126,7 +169,7 @@
             </p>
         </section>
 
-        <section class="layout__contact">
+        <section id="contact" class="layout__contact" data-effect="sliceBottom">
             <h3 class="contact__title">No dudes en escribirme!</h3>
             
             <a href="mailto:valeryortizparra@gmail.com" class="contact__email">Enviame un email</a>

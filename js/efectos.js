@@ -1,23 +1,3 @@
-/*Contador de numeros */
-let spanContador = document.getElementById("contadorSeguidores");
-let numeroFinal = 350; // El número final
-let duracion = 2000; // Duración en milisegundos
-let intervalo = 10; // Intervalo de actualización en milisegundos
-let paso = 0;
-
-
-let contador = setInterval(() => {
-
-    if(paso<= numeroFinal){
-        spanContador.innerText = paso;
-        paso++
-        
-    }else{
-        clearInterval(contador)
-    }            
-}, intervalo);  
-
-
 /* Slider */
 
 // Seleccionamos los elementos necesarios
@@ -78,3 +58,122 @@ setInterval(moveSlider, 3000);
 window.addEventListener('resize', () => {
     track.style.width = `${calculateTrackWidth()}px`;
 });
+
+//-------------------------- Menu Desplegable -------------------------------
+
+const boton = document.querySelector(".nav__crossContainer");
+const lineas = document.querySelectorAll(".nav__crossLinea");
+const aside = document.querySelector(".layout__asideNav");
+
+let cruz = false;
+let visible = "aside__visible"
+
+let esconder = ()=>{
+    
+    if(!cruz){
+        cruz = true
+
+        lineas.forEach((linea, index)=>{
+        
+            let mostrar = `clicked${index+1}`;
+    
+            linea.classList.add(mostrar)  
+        })
+
+        aside.classList.add(visible);
+    }else{
+        cruz=false;
+
+        lineas.forEach((linea, index)=>{
+
+            let mostrar = `clicked${index+1}`;
+
+            linea.classList.remove(mostrar)
+
+        })
+
+        aside.classList.remove(visible)
+    }
+    
+}
+
+boton.addEventListener("click", esconder);
+
+addEventListener("scroll", ()=>{
+    lineas.forEach((linea, index)=>{
+        
+        let mostrar = `clicked${index+1}`;
+
+        linea.classList.remove(mostrar)
+
+    })
+    
+    cruz= false;
+    
+    aside.classList.remove(visible)
+})
+
+// ------------------ Contador de Numeros ------------------
+
+let spanContador = document.getElementById("contadorSeguidores");
+let numeroFinal = 350; // El número final
+let duracion = 2000; // Duración en milisegundos
+let intervalo = 10; // Intervalo de actualización en milisegundos
+let paso = 0;
+
+let iniciarContador = () => {
+    let contador = setInterval(() => {
+    
+        if(paso<= numeroFinal){
+            spanContador.innerText = paso;
+            paso++
+            
+        }else{
+            clearInterval(contador)
+        }            
+    }, intervalo);  
+}
+
+// ------------------ Observador ------------------
+const observerCallBack = (entries, observer) =>{
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            const effect = entry.target.getAttribute("data-effect");
+
+            if(effect === "contador"){
+                iniciarContador();
+            }
+
+            if(effect === "sliceBottom"){
+                entry.target.classList.add("visible");
+            }
+
+            observer.unobserve(entry.target);
+        }
+    })
+}
+
+const observerOptions = {
+    root: null, // usar el viewport como contenedor
+    threshold: 0.1, // cuando al menos 20% del elemento es visible
+    rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver(observerCallBack, observerOptions);
+
+const socialMedia = document.querySelector(".layout__socialMedia");
+const aboutMe = document.querySelector(".layout__about");
+
+const sections = document.querySelectorAll("section");
+
+if(socialMedia){
+    observer.observe(socialMedia);
+    console.log(sections);
+    
+}
+
+sections.forEach((section)=>{
+    if(section.getAttribute("data-effect")){
+        observer.observe(section)
+    }
+})
