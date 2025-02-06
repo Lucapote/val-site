@@ -1,8 +1,9 @@
 :root{
     --blanco: #FDFFFC;
     --rosa: #F8C0C8;
+    --rosaGradiente: linear-gradient(180deg, rgba(248,192,200,1) 0%, rgba(248,192,200,1) 50%, rgba(248,192,200,0.7959558823529411) 100%);
     --negro: #000000;
-    --fa-counter-background-color: var(--rosa);
+    --asideColor: #F7ACB8;
     --paddingMobile: 36px 24px;
     --paddingTablet: 36px 40px;
     --gapSocialMobile: 24px;
@@ -42,17 +43,18 @@ body{
 /* ---------------------- Aside y Nav ---------------------- */
 .layout__asideNav{
     font-size: 16px;
-    background-color: var(--rosa);
+    background-color: var(--asideColor);
     height: 100%;
     max-width: 280px;
     width: 60%;
+    border-radius: 24px 0 0 24px;
     
     position: fixed;
     right: 0;
     top: 0;
     bottom: 0;
     z-index: 11;
-    
+
     opacity: 0;
     visibility: hidden;
     transform: translateX(280px);
@@ -68,7 +70,7 @@ body{
 
 .asideNav__menu{
     position: absolute;
-    top: 18px;
+    top: 78px;
     right: 18%;
 
     color: var(--blanco);
@@ -93,7 +95,7 @@ body{
 
     padding: 16px 0;
 
-    background-color: var(--rosa);
+    background: var(--rosaGradiente);
 }
 
 .layout__nav{
