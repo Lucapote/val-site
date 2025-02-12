@@ -71,6 +71,7 @@
     max-width: 370px;
     border-radius: 22px;
     width: 240px;
+    cursor: pointer;
 
     font-size: 20px;
     width: 288px;
@@ -89,7 +90,8 @@
 
 @media (max-width: 768px){
     .contact__form{
-        width: 231px;
+        width: 100%;
+        max-width: 395px;
         gap: 24px;
     }
 
