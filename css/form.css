@@ -1,0 +1,117 @@
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    width: 395px;
+}
+
+.form__input--textarea{
+    resize: none;
+    height: 240px;
+}
+
+.form__label{
+    margin-bottom: 12px;
+    margin-left: 16px;
+    font-size: 18px;
+    color: var(--gris);
+}
+
+.form__input{
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+    padding: 6px 15px;
+    border-radius: 18px;
+    border: 2px solid var(--negro);
+    background-color: transparent;
+    transition: all 300ms ease-in-out;
+}
+
+.form__entryArea{
+    position: relative;
+    width: 100%;
+}
+
+.form__input:focus,
+.form__input:valid{
+    border-color: var(--rosa);
+}
+
+.form__input:focus + .form__labelLine,
+.form__input:valid + .form__labelLine,
+.form__input--email:valid + .form__labelLine{
+    z-index: 1;
+    top: -12px;
+    left: 15px;
+    border-color: var(--rosa);
+}
+
+.form__labelLine{
+    padding: 0 6px;
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    z-index: -1;
+    background-color: var(--blanco);
+    color: var(--gris);
+    transition: all 300ms ease-in-out;
+}
+
+.form__btn{
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 0 9px 19px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--negro);
+    background-color: var(--blanco);
+    padding: 6px 0;
+    max-width: 370px;
+    border-radius: 22px;
+    width: 240px;
+
+    font-size: 20px;
+    width: 288px;
+    transition: all 300ms ease-in-out;
+}
+
+.form__btn:hover{
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+.form__btn:active{
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+}
+
+@media (max-width: 768px){
+    .contact__form{
+        width: 231px;
+        gap: 24px;
+    }
+
+    .form__input{
+        font-size: 16px;
+    }
+
+    .form__labelLine{
+        top: 10px;
+    }
+
+    .form__input:focus + .form__labelLine,
+    .form__input:valid + .form__labelLine{
+        font-size: 14px;
+        left: 18px;
+    }
+
+    .form__btn{
+        width: 240px;
+    }
+
+    .form__input--textarea{
+        height: 150px;
+    }
+}

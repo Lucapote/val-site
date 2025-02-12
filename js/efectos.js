@@ -166,14 +166,37 @@ const aboutMe = document.querySelector(".layout__about");
 
 const sections = document.querySelectorAll("section");
 
-if(socialMedia){
-    observer.observe(socialMedia);
-    console.log(sections);
-    
-}
-
 sections.forEach((section)=>{
     if(section.getAttribute("data-effect")){
         observer.observe(section)
     }
 })
+
+// ------------------ EmailJs ------------------
+const mostrarMensaje = document.querySelector(".contact__mensajeEnvio");
+const mensaje = document.querySelectorAll(".mensajeEnvio__mensaje");
+const mostrar = "mensaje__mostrar";
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_p76elwj';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar Mensaje';
+      mostrarMensaje.classList.add(mostrar)
+      mensaje[0].classList.add(mostrar)
+    }, (err) => {
+      btn.value = 'Enviar Mensaje';
+      mostrarMensaje.classList.add(mostrar)
+      mensaje[1].classList.add(mostrar)
+      alert(JSON.stringify(err));
+    });
+});

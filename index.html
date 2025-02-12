@@ -10,7 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/form.css">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('nd-rPPPWyriG8-tC8')
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -147,7 +155,7 @@
                         Si crees que mi perfil puede ayudar con algún proyecto no dudes en consultar! Es bienvenido!
                     </p>
         
-                    <a href="mailto:valeryortizparra@gmail.com" class="about__btn">Enviame un email</a>
+                    <a href="#contact" class="about__btn">Estemos en contacto!</a>
                 </div>
     
                 <div class="about__right">
@@ -171,8 +179,28 @@
 
         <section id="contact" class="layout__contact" data-effect="sliceBottom">
             <h3 class="contact__title">No dudes en escribirme!</h3>
-            
-            <a href="mailto:valeryortizparra@gmail.com" class="contact__email">Enviame un email</a>
+
+            <form id="form" class="contact__form">
+                <div class="form__entryArea">
+                    <input class="form__input form__input--text" type="text" name="from_name" id="from_name" required>
+                    <div class="form__labelLine">Ingrese su nombre</div>
+                </div>
+                <div class="form__entryArea">
+                    <input class="form__input form__input--email" type="email" name="reply_to" id="reply_to" required>
+                    <div class="form__labelLine">Ingrese su email</div>
+                </div>
+                <div class="form__entryArea">
+                    <textarea class="form__input form__input--textarea" name="message" id="message" maxlength="280" required></textarea>
+                    <div class="form__labelLine">Ingrese su mensaje</div>
+                </div>
+              
+                <input class="form__btn" type="submit" id="button" value="Enviar Mensaje" >
+            </form>
+
+            <div class="contact__mensajeEnvio">
+                <p class="mensajeEnvio__mensaje">Mensaje enviado 😄</p>
+                <p class="mensajeEnvio__mensaje">No se pudo enviar 😞</p>
+            </div>
 
             <ul class="contact__socialList">
                 <li class="socialList__item">

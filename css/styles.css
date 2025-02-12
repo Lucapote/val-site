@@ -4,6 +4,8 @@
     --rosaGradiente: linear-gradient(180deg, rgba(248,192,200,1) 0%, rgba(248,192,200,1) 50%, rgba(248,192,200,0.7959558823529411) 100%);
     --negro: #000000;
     --asideColor: #F7ACB8;
+    --gris: #4d4d4d;
+    --rojo: red;
     --paddingMobile: 36px 24px;
     --paddingTablet: 36px 40px;
     --gapSocialMobile: 24px;
@@ -466,16 +468,18 @@ body{
     gap: 24px;
 }
 
-.contact__email{
-    display: flex;
-    justify-content: center;
+.contact__mensajeEnvio{
+    display: none;
+}
 
-    box-shadow: 0 9px 19px 0px rgba(0, 0, 0, 0.15);
-    border: 1px solid black;
-    padding: 6px 0;
-    max-width: 370px;
-    border-radius: 18px;
-    width: 240px;
+.mensajeEnvio__mensaje{
+    display: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mensaje__mostrar{
+    display: block;
 }
 
 /* Footer */
