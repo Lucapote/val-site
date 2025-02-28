@@ -71,9 +71,7 @@ body{
 }
 
 .asideNav__menu{
-    position: absolute;
-    top: 78px;
-    right: 10%;
+    margin-top: 78px;
 
     color: var(--blanco);
 
